@@ -3,3 +3,12 @@ steps:
   args: ['build', '-t', 'asia-southeast1-docker.pkg.dev/oval-heuristic-428803-v9/first-app/first_app', '.']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'asia-southeast1-docker.pkg.dev/oval-heuristic-428803-v9/first-app/first_app']
+
+
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  script: |
+    docker build -t asia-southeast1-docker.pkg.dev/oval-heuristic-428803-v9/first-app/first_app .
+  automapSubstitutions: true
+images:
+- 'asia-southeast1-docker.pkg.dev/oval-heuristic-428803-v9/first-app/first_app'
